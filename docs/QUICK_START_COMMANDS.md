@@ -30,7 +30,7 @@ terraform apply
 
 #### **5. Configure kubectl**
 ```bash
-az aks get-credentials --resource-group rg-foundry --name aks-ai-agent-cluster
+az aks get-credentials --resource-group rg-aks-ai-agent-dev --name aks-ai-agent-cluster
 ```
 
 #### **6. Create .env File**
@@ -103,12 +103,12 @@ node --version
 
 #### **1. Stop AKS Cluster (Save Costs)**
 ```bash
-az aks stop --resource-group rg-foundry --name aks-ai-agent-cluster
+az aks stop --resource-group rg-aks-ai-agent-dev --name aks-ai-agent-cluster
 ```
 
 #### **2. Start AKS Cluster**
 ```bash
-az aks start --resource-group rg-foundry --name aks-ai-agent-cluster
+az aks start --resource-group rg-aks-ai-agent-dev --name aks-ai-agent-cluster
 ```
 
 #### **3. Destroy Infrastructure**
@@ -123,7 +123,7 @@ terraform destroy
 1. `pip install -r requirements.txt`
 2. `npm install -g mcp-server-kubernetes`
 3. `terraform apply`
-4. `az aks get-credentials --resource-group rg-foundry --name aks-ai-agent-cluster`
+4. `az aks get-credentials --resource-group rg-aks-ai-agent-dev --name aks-ai-agent-cluster`
 
 ### **Run Every Time:**
 1. `chainlit run app_ui.py -w --port 8000`

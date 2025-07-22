@@ -22,8 +22,8 @@ An intelligent AI agent that discovers and assesses Kubernetes clusters using Az
 ```
 
 ### 3. Configure Azure OpenAI
-1. Deploy Azure OpenAI in Azure AI Foundry
-2. Create a GPT-4 deployment
+1. Deploy Azure OpenAI in Azure AI Foundry (foundry-gptmodel-resource)
+2. Create a GPT-4o Standard deployment (gpt-4o-standard)
 3. Copy endpoint and API key to `.env` file
 
 ### 4. Deploy AKS Cluster
@@ -53,7 +53,7 @@ az aks get-credentials --resource-group rg-aks-ai-agent-dev --name aks-ai-agent-
 │   ├── variables.tf    # Variable definitions
 │   └── terraform.tfvars # Variable values
 ├── app.py              # Main agent implementation
-├── chainlit.py         # Chainlit web interface
+├── app_ui.py           # Chainlit web interface
 ├── utilities.py        # Helper functions
 ├── requirements.txt    # Python dependencies
 ├── .env.example        # Environment template
@@ -76,7 +76,7 @@ npm install -g mcp-server-kubernetes
 ```
 
 ### Azure Setup
-1. Azure OpenAI resource with GPT-4 deployment
+1. Azure OpenAI resource with GPT-4o Standard deployment (foundry-gptmodel-resource)
 2. Update `.env` file with your endpoint and API key
 
 ### Kubernetes Setup
@@ -87,16 +87,16 @@ npm install -g mcp-server-kubernetes
 
 ### Environment Variables (.env)
 ```bash
-AZURE_OPENAI_ENDPOINT=https://your-openai-resource.openai.azure.com/
+AZURE_OPENAI_ENDPOINT=https://foundry-gptmodel-resource.cognitiveservices.azure.com/
 AZURE_OPENAI_API_KEY=your-api-key-here
-AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4
+AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4o-standard
 AZURE_OPENAI_API_VERSION=2024-02-01
 ```
 
 ### Terraform Variables (terraform.tfvars)
 ```hcl
 resource_group_name = "rg-aks-ai-agent-dev"
-location           = "East US"
+location           = "Central India"
 cluster_name       = "aks-ai-agent-cluster"
 acr_name          = "acraksiagent001"  # Must be globally unique
 node_count        = 2
@@ -141,7 +141,8 @@ The agent can help you:
 
 3. **Azure OpenAI errors**
    - Check endpoint and API key in `.env`
-   - Verify deployment name matches your Azure OpenAI deployment
+   - Verify deployment name (gpt-4o-standard) matches your Azure OpenAI deployment
+   - Ensure endpoint URL is correct (foundry-gptmodel-resource)
 
 ## 📚 Resources
 

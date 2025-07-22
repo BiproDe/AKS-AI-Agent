@@ -82,4 +82,4 @@ Write-Host "Next steps:" -ForegroundColor Cyan
 Write-Host "1. Edit .env file with your Azure OpenAI credentials" -ForegroundColor White
 Write-Host "2. Deploy AKS cluster: cd terraform && terraform plan && terraform apply" -ForegroundColor White
 Write-Host "3. Configure kubectl: az aks get-credentials --resource-group <rg-name> --name <cluster-name>" -ForegroundColor White
-Write-Host "4. Run the agent: ./venv/Scripts/Activate.ps1 && chainlit run chainlit.py -w" -ForegroundColor White
+Write-Host "4. Run the agent: ./venv/Scripts/Activate.ps1 && chainlit run app_ui.py -w" -ForegroundColor White
