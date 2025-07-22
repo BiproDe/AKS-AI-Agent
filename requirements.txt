@@ -1,0 +1,21 @@
+# AKS AI Agent - Python Dependencies
+
+# Option 1: Latest versions (recommended for development)
+semantic-kernel
+chainlit
+azure-identity
+azure-keyvault-secrets
+python-dotenv
+pydantic
+aiohttp
+psutil
+
+# Option 2: Pinned versions (recommended for production)
+# semantic-kernel==1.35.0
+# chainlit==2.6.2
+# azure-identity>=1.15.0
+# azure-keyvault-secrets>=4.8.0
+# python-dotenv>=1.0.0
+# pydantic>=2.5.0
+# aiohttp>=3.9.0
+# psutil>=5.9.0
